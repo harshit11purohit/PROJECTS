@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+</head>
+<body>
+
+<form method="POST">
+    <input name="city" placeholder="Enter City" required>
+    <button type="submit">Get Weather</button>
+</form>
+
+{% if df %}
+<h3>Weather Data</h3>
+{{ df.to_html()|safe }}
+
+<a href="/download/csv">Download CSV</a> |
+<a href="/download/excel">Download Excel</a> |
+<a href="/download/xml">Download XML</a>
+{% endif %}
+
+</body>
+</html>
